@@ -3,7 +3,8 @@ $(document).ready(function() {
     var age = parseInt($("input#age").val());
     var gender = $("select#gender").val();
 
-    if (age <= 30 && gender === 'female') {
+    if (age) {
+      if (age <= 30 && gender === 'female') {
       $("#celeb1").show();
       $("#celeb2").hide();
       $("#celeb3").hide();
@@ -24,6 +25,10 @@ $(document).ready(function() {
       $("#celeb2").hide();
       $("#celeb3").hide();
     }
+    } else {
+      $("#error1").show();
+    }
+
     event.preventDefault();
   });
 });
